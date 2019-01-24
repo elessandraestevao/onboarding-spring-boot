@@ -1,0 +1,29 @@
+plugins {
+    //manter a mesma versão dos plugins igual a da jvm Kotlin para evitar problemas
+    id 'org.jetbrains.kotlin.jvm' version '1.3.11'
+    id 'org.jetbrains.kotlin.plugin.spring' version '1.3.11'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.3.11'
+}
+
+group 'br.com.elessandraestevao'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.2.RELEASE'
+    compile 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:2.1.2.RELEASE'
+    compile 'org.hsqldb:hsqldb:2.4.1'
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
